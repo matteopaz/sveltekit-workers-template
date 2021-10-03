@@ -1,4 +1,4 @@
-name = "sveltekit-template-workers"
+name = "sveltekit-workers-template"
 type = "webpack"
 route = ''
 zone_id = ''
