@@ -2,3 +2,5 @@
     import 'normalize.css';
     import '/static/global.css';
 </script>
+
+<slot></slot>
