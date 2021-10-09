@@ -1,3 +1,13 @@
+# Asset Handling
+Use "/" for static assets such as images. CSS files and such non-proper static files can be placed in root.
+
+# Conventions
+Place components to single routes in private folders next to the .svelte route file. Shared components in lib, along
+with shared util files. Keep stores in the private folders.
+
+
+
+-------
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);

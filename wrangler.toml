@@ -1,5 +1,5 @@
 name = "sveltekit-workers-template"
-type = "webpack"
+type = "vite"
 route = ''
 zone_id = ''
 usage_model = ''
@@ -8,4 +8,4 @@ workers_dev = true
 compatibility_date = "2021-10-03"
 [site]
 bucket = './build'
-entry-point = './workers-site'
+entry-point = './worker-built'

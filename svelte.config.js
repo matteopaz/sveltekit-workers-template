@@ -1,7 +1,7 @@
 import preprocess from 'svelte-preprocess';
 import adapterCFW from '@sveltejs/adapter-cloudflare-workers';
 import { defineConfig } from 'vite';
-import viteCompression from 'vite-plugin-compression';
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,40 +13,22 @@ const config = {
 
     kit: {
         files: {
-            assets: "static"
+            assets: "public"
         },
         adapter: adapterCFW(),
         target: '#svelte',
-    },
-
-    vite: defineConfig(({ command }) => {
-        if (command == "build") {
-            return {
-                plugins: [
-                    viteCompression({ algorithm: 'brotliCompress', ext: '.br' })
-                ],
+        vite: () => {
+            return defineConfig({
                 server: {
                     hmr: {
                         port: 3000,
                         host: "localhost",
-                        https: true,
                         open: true
                     }
                 }
-            }
-        } else {
-            return {
-                server: {
-                    hmr: {
-                        port: 3000,
-                        host: "localhost",
-                        https: true,
-                        open: true
-                    }
-                }
-            }
+            })
         }
-    })
+    }
 }
 
 export default config;
